@@ -1,0 +1,15 @@
+C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Infrastructure\bin\Debug\net8.0\BookBridge.Infrastructure.deps.json
+C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Infrastructure\bin\Debug\net8.0\BookBridge.Infrastructure.dll
+C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Infrastructure\bin\Debug\net8.0\BookBridge.Infrastructure.pdb
+C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Infrastructure\obj\Debug\net8.0\BookBridge.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Infrastructure\obj\Debug\net8.0\BookBridge.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Infrastructure\obj\Debug\net8.0\BookBridge.Infrastructure.AssemblyInfo.cs
+C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Infrastructure\obj\Debug\net8.0\BookBridge.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Infrastructure\obj\Debug\net8.0\BookBridge.Infrastructure.dll
+C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Infrastructure\obj\Debug\net8.0\refint\BookBridge.Infrastructure.dll
+C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Infrastructure\obj\Debug\net8.0\BookBridge.Infrastructure.pdb
+C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Infrastructure\obj\Debug\net8.0\ref\BookBridge.Infrastructure.dll
+C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Infrastructure\bin\Debug\net8.0\BookBridge.Domain.dll
+C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Infrastructure\bin\Debug\net8.0\BookBridge.Domain.pdb
+C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Infrastructure\obj\Debug\net8.0\BookBridge.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Infrastructure\obj\Debug\net8.0\BookBrid.281E267C.Up2Date
