@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ieUwIAjAz93vZWgD8+8wycQJyWwsWsbnJdft2QQM74LIzn6sS0nAeLZXOI7v3cQR+iNVB8MKfWSG4dcZrsg5SQ==",
+  "dgSpecHash": "JxbaOhI++1d/OPhe388GYd+o02/CgKvWTWIOTr1d0zkM4LEffNNe/RoOHGkmi/ZRub9HYYJaWkFbeZ4IoMAKEA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Domain\\BookBridge.Domain.csproj",
+  "projectFilePath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Domain\\BookBridge.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\RAISA\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\RAISA\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

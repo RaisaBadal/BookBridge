@@ -10,3 +10,16 @@ C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Persistance\obj\Debug\net8
 C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Persistance\obj\Debug\net8.0\refint\BookBridge.Persistance.dll
 C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Persistance\obj\Debug\net8.0\BookBridge.Persistance.pdb
 C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Persistance\obj\Debug\net8.0\ref\BookBridge.Persistance.dll
+C:\Users\RAISA\Source\Repos\BookBrige.APId\BookBridge.Persistance\bin\Debug\net8.0\BookBridge.Persistance.deps.json
+C:\Users\RAISA\Source\Repos\BookBrige.APId\BookBridge.Persistance\bin\Debug\net8.0\BookBridge.Persistance.dll
+C:\Users\RAISA\Source\Repos\BookBrige.APId\BookBridge.Persistance\bin\Debug\net8.0\BookBridge.Persistance.pdb
+C:\Users\RAISA\Source\Repos\BookBrige.APId\BookBridge.Persistance\obj\Debug\net8.0\BookBridge.Persistance.csproj.AssemblyReference.cache
+C:\Users\RAISA\Source\Repos\BookBrige.APId\BookBridge.Persistance\obj\Debug\net8.0\BookBridge.Persistance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RAISA\Source\Repos\BookBrige.APId\BookBridge.Persistance\obj\Debug\net8.0\BookBridge.Persistance.AssemblyInfoInputs.cache
+C:\Users\RAISA\Source\Repos\BookBrige.APId\BookBridge.Persistance\obj\Debug\net8.0\BookBridge.Persistance.AssemblyInfo.cs
+C:\Users\RAISA\Source\Repos\BookBrige.APId\BookBridge.Persistance\obj\Debug\net8.0\BookBridge.Persistance.csproj.CoreCompileInputs.cache
+C:\Users\RAISA\Source\Repos\BookBrige.APId\BookBridge.Persistance\obj\Debug\net8.0\BookBridge.Persistance.sourcelink.json
+C:\Users\RAISA\Source\Repos\BookBrige.APId\BookBridge.Persistance\obj\Debug\net8.0\BookBridge.Persistance.dll
+C:\Users\RAISA\Source\Repos\BookBrige.APId\BookBridge.Persistance\obj\Debug\net8.0\refint\BookBridge.Persistance.dll
+C:\Users\RAISA\Source\Repos\BookBrige.APId\BookBridge.Persistance\obj\Debug\net8.0\BookBridge.Persistance.pdb
+C:\Users\RAISA\Source\Repos\BookBrige.APId\BookBridge.Persistance\obj\Debug\net8.0\ref\BookBridge.Persistance.dll

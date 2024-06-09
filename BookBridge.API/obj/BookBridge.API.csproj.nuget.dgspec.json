@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.API\\BookBridge.API.csproj": {}
+    "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.API\\BookBridge.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.API\\BookBridge.API.csproj": {
+    "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.API\\BookBridge.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.API\\BookBridge.API.csproj",
+        "projectUniqueName": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.API\\BookBridge.API.csproj",
         "projectName": "BookBridge.API",
-        "projectPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.API\\BookBridge.API.csproj",
+        "projectPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.API\\BookBridge.API.csproj",
         "packagesPath": "C:\\Users\\RAISA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.API\\obj\\",
+        "outputPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,17 +32,17 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Application\\BookBridge.Application.csproj": {
-                "projectPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Application\\BookBridge.Application.csproj"
+              "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Application\\BookBridge.Application.csproj": {
+                "projectPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Application\\BookBridge.Application.csproj"
               },
-              "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Domain\\BookBridge.Domain.csproj": {
-                "projectPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Domain\\BookBridge.Domain.csproj"
+              "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Domain\\BookBridge.Domain.csproj": {
+                "projectPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Domain\\BookBridge.Domain.csproj"
               },
-              "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj"
+              "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj"
               },
-              "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Persistance\\BookBridge.Persistance.csproj": {
-                "projectPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Persistance\\BookBridge.Persistance.csproj"
+              "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Persistance\\BookBridge.Persistance.csproj": {
+                "projectPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Persistance\\BookBridge.Persistance.csproj"
               }
             }
           }
@@ -122,14 +122,14 @@
         }
       }
     },
-    "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Application\\BookBridge.Application.csproj": {
+    "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Application\\BookBridge.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Application\\BookBridge.Application.csproj",
+        "projectUniqueName": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Application\\BookBridge.Application.csproj",
         "projectName": "BookBridge.Application",
-        "projectPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Application\\BookBridge.Application.csproj",
+        "projectPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Application\\BookBridge.Application.csproj",
         "packagesPath": "C:\\Users\\RAISA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Application\\obj\\",
+        "outputPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -150,11 +150,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Domain\\BookBridge.Domain.csproj": {
-                "projectPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Domain\\BookBridge.Domain.csproj"
+              "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Domain\\BookBridge.Domain.csproj": {
+                "projectPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Domain\\BookBridge.Domain.csproj"
               },
-              "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Persistance\\BookBridge.Persistance.csproj": {
-                "projectPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Persistance\\BookBridge.Persistance.csproj"
+              "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Persistance\\BookBridge.Persistance.csproj": {
+                "projectPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Persistance\\BookBridge.Persistance.csproj"
               }
             }
           }
@@ -203,14 +203,14 @@
         }
       }
     },
-    "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Domain\\BookBridge.Domain.csproj": {
+    "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Domain\\BookBridge.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Domain\\BookBridge.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Domain\\BookBridge.Domain.csproj",
         "projectName": "BookBridge.Domain",
-        "projectPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Domain\\BookBridge.Domain.csproj",
+        "projectPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Domain\\BookBridge.Domain.csproj",
         "packagesPath": "C:\\Users\\RAISA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Domain\\obj\\",
+        "outputPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -297,14 +297,14 @@
         }
       }
     },
-    "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj": {
+    "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj",
         "projectName": "BookBridge.Infrastructure",
-        "projectPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\RAISA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -325,8 +325,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Domain\\BookBridge.Domain.csproj": {
-                "projectPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Domain\\BookBridge.Domain.csproj"
+              "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Domain\\BookBridge.Domain.csproj": {
+                "projectPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Domain\\BookBridge.Domain.csproj"
               }
             }
           }
@@ -371,14 +371,14 @@
         }
       }
     },
-    "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Persistance\\BookBridge.Persistance.csproj": {
+    "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Persistance\\BookBridge.Persistance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Persistance\\BookBridge.Persistance.csproj",
+        "projectUniqueName": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Persistance\\BookBridge.Persistance.csproj",
         "projectName": "BookBridge.Persistance",
-        "projectPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Persistance\\BookBridge.Persistance.csproj",
+        "projectPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Persistance\\BookBridge.Persistance.csproj",
         "packagesPath": "C:\\Users\\RAISA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RAISA\\source\\repos\\BookBridge.API\\BookBridge.Persistance\\obj\\",
+        "outputPath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Persistance\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -6,11 +6,13 @@ using Microsoft.Extensions.Caching.Memory;
 using System.Collections.Generic;
 using BookBridge.Application.StaticFiles;
 using BookBridge.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookBridge.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class WishlistController(IWishlistService wishlistService, IReviewService reviewService, IMemoryCache memoryCache) : ControllerBase
     {
         private readonly IWishlistService wishlistService = wishlistService;

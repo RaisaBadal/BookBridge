@@ -4,6 +4,7 @@ using BookBridge.Application.Models.Request;
 using BookBridge.Application.response;
 using BookBridge.Application.StaticFiles;
 using BookBridge.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
@@ -12,6 +13,7 @@ namespace BookBridge.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BorrowController : ControllerBase
     {
         private readonly IMemoryCache memoryCache;

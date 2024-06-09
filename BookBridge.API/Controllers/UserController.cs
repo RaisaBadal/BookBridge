@@ -2,6 +2,7 @@
 using BookBridge.Application.Models.Request;
 using BookBridge.Application.response;
 using BookBridge.Application.StaticFiles;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
@@ -10,6 +11,7 @@ namespace BookBridge.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UserController(IIdentityService identityService) : ControllerBase
     {
         private readonly IIdentityService identityService = identityService;

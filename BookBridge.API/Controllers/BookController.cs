@@ -2,6 +2,7 @@
 using BookBridge.Application.Models.Request;
 using BookBridge.Application.response;
 using BookBridge.Application.StaticFiles;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 
@@ -9,6 +10,7 @@ namespace BookBridge.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BookController(
         IBookService _bookService,
         IBookCategoryService _bookCategoryService,
@@ -22,6 +24,7 @@ namespace BookBridge.API.Controllers
         //BookEndpoints
         [HttpPost]
         [Route(nameof(InsertBook))]
+        [AllowAnonymous]
         public async Task<Response<long>> InsertBook([FromBody]BookModel entity)
         {
             try
@@ -38,6 +41,7 @@ namespace BookBridge.API.Controllers
 
         [HttpGet]
         [Route("[action]/{id}")]
+        [AllowAnonymous]
         public async Task<Response<bool>> RemoveBook([FromRoute] long id)
         {
             try
@@ -53,17 +57,17 @@ namespace BookBridge.API.Controllers
 
         [HttpPut]
         [Route("[action]/{id}")]
-        public async Task<Response<bool>> UpdateBook([FromRoute]long id, [FromBody]BookModel entity)
+        public async Task<ActionResult<bool>> UpdateBook([FromRoute]long id, [FromBody]BookModel entity)
         {
             try
             {
-                if(!ModelState.IsValid||entity is null) return Response<bool>.Error(ErrorKeys.BadRequest);
+                if(!ModelState.IsValid||entity is null) return BadRequest(ErrorKeys.BadRequest);
                 var res=await _bookService.UpdateAsync(id,entity);
-                return res ? Response<bool>.Ok(res) : Response<bool>.Error(ErrorKeys.BadRequest);
+                return res ?Ok(res) : BadRequest(ErrorKeys.BadRequest);
             }
             catch (Exception e)
             {
-               return Response<bool>.Error(e.Message,e.StackTrace,ErrorKeys.InternalServerError);
+               return BadRequest(ErrorKeys.InternalServerError);
             }
         }
 
@@ -84,27 +88,28 @@ namespace BookBridge.API.Controllers
 
         [HttpGet]
         [Route("[action]")]
+        [AllowAnonymous]
         public async Task<ActionResult<BookModel>> AllBook()
         {
             try
             {
-                //const string cacheKey = "GetAllBook";
-                //if (_memoryCache.TryGetValue(cacheKey, out IEnumerable<BookModel>? cachedData))
-                //{
-                //    if(cachedData!=null) return Response<IEnumerable<BookModel>>.Ok(cachedData);
-                //}
-                //else
-                //{
+                const string cacheKey = "GetAllBook";
+                if (_memoryCache.TryGetValue(cacheKey, out IEnumerable<BookModel>? cachedData))
+                {
+                    if (cachedData != null) return Ok(cachedData);
+                }
+                else
+                {
                     var res = await _bookService.GetAllAsync();
                     if (!res.Any())
                     {
                     BadRequest(res);
                     }
 
-                // _memoryCache.Set(cacheKey, res,TimeSpan.FromMinutes(30));
-                return Ok(res);
-                //}
-               // return Response<IEnumerable<BookModel>>.Error(ErrorKeys.BadRequest);
+                    _memoryCache.Set(cacheKey, res, TimeSpan.FromMinutes(30));
+                    return Ok(res);
+                }
+                return BadRequest(ErrorKeys.BadRequest);
 
             }
             catch (Exception e)
@@ -115,6 +120,7 @@ namespace BookBridge.API.Controllers
 
         [HttpGet]
         [Route("[action]/{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<BookModel>> GetByIdBook([FromRoute]long id)
         {
             try
@@ -201,6 +207,7 @@ namespace BookBridge.API.Controllers
 
         [HttpGet]
         [Route("[action]")]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<BookCategoryModel>>> AllBookCategory()
         {
             try
@@ -318,6 +325,7 @@ namespace BookBridge.API.Controllers
 
         [HttpGet]
         [Route("[action]")]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<AuthorModel>>> AllAuthor()
         {
             try

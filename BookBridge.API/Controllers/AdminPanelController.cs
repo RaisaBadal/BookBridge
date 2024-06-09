@@ -10,7 +10,8 @@ namespace BookBridge.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "ADMIN")]
+    /// [Authorize(Roles = "ADMIN")]
+    [Authorize]
     public class AdminPanelController(IIdentityService identityServices) : ControllerBase
     {
         private readonly IIdentityService _identityServices = identityServices;

@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BookBridge.Domain
-build_property.ProjectDir = C:\Users\RAISA\source\repos\BookBridge.API\BookBridge.Domain\
+build_property.ProjectDir = C:\Users\RAISA\Source\Repos\BookBrige.APId\BookBridge.Domain\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

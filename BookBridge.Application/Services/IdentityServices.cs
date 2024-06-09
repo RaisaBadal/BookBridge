@@ -215,8 +215,12 @@ namespace BookBridge.Application.Services
                 ArgumentNullException.ThrowIfNull(roleName);
                 if (await roleManager.RoleExistsAsync(roleName))
                 {
-                    await roleManager.DeleteAsync(new IdentityRole(roleName));
-                    return true;
+                    var res=await roleManager.Roles.FirstOrDefaultAsync(x => x.Name == roleName);
+                    if (res is not null)
+                    {
+                        await roleManager.DeleteAsync(res);
+                        return true;
+                    }
                 }
 
                 return false;
