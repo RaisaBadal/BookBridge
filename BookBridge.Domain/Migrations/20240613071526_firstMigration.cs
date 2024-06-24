@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BookBridge.Domain.Migrations
 {
     /// <inheritdoc />
-    public partial class asjhaj : Migration
+    public partial class firstMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -114,11 +114,8 @@ namespace BookBridge.Domain.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Message = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    SentDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsSent = table.Column<bool>(type: "bit", nullable: false)
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -355,24 +352,28 @@ namespace BookBridge.Domain.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "NotificationUser",
+                name: "UserNotifications",
                 columns: table => new
                 {
-                    NotificationsId = table.Column<long>(type: "bigint", nullable: false),
-                    UsersId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    NotificationId = table.Column<long>(type: "bigint", nullable: false),
+                    SentDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsSent = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_NotificationUser", x => new { x.NotificationsId, x.UsersId });
+                    table.PrimaryKey("PK_UserNotifications", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_NotificationUser_AspNetUsers_UsersId",
-                        column: x => x.UsersId,
+                        name: "FK_UserNotifications_AspNetUsers_UserId",
+                        column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_NotificationUser_Notifications_NotificationsId",
-                        column: x => x.NotificationsId,
+                        name: "FK_UserNotifications_Notifications_NotificationId",
+                        column: x => x.NotificationId,
                         principalTable: "Notifications",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -503,16 +504,6 @@ namespace BookBridge.Domain.Migrations
                 column: "CreatedDate");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Notifications_SentDate",
-                table: "Notifications",
-                column: "SentDate");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_NotificationUser_UsersId",
-                table: "NotificationUser",
-                column: "UsersId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Reviews_BookId",
                 table: "Reviews",
                 column: "BookId");
@@ -520,6 +511,16 @@ namespace BookBridge.Domain.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Reviews_UserId",
                 table: "Reviews",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserNotifications_NotificationId",
+                table: "UserNotifications",
+                column: "NotificationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserNotifications_UserId",
+                table: "UserNotifications",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -567,10 +568,10 @@ namespace BookBridge.Domain.Migrations
                 name: "BookBorrowRecord");
 
             migrationBuilder.DropTable(
-                name: "NotificationUser");
+                name: "Reviews");
 
             migrationBuilder.DropTable(
-                name: "Reviews");
+                name: "UserNotifications");
 
             migrationBuilder.DropTable(
                 name: "WishlistItems");

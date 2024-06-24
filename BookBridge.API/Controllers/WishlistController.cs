@@ -3,10 +3,9 @@ using BookBridge.Application.Models.Request;
 using BookBridge.Application.response;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
-using System.Collections.Generic;
 using BookBridge.Application.StaticFiles;
-using BookBridge.Application.Services;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace BookBridge.API.Controllers
 {
@@ -85,6 +84,7 @@ namespace BookBridge.API.Controllers
 
         [HttpDelete]
         [Route("[action]/{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<Response<bool>> RemoveReview([FromRoute] long id)
         {
             try
@@ -116,6 +116,7 @@ namespace BookBridge.API.Controllers
 
         [HttpPost]
         [Route("[action]/{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<Response<bool>> SoftDeleteReview([FromRoute] long id)
         {
             try
@@ -185,11 +186,16 @@ namespace BookBridge.API.Controllers
 
         //WishlistEndpoint
         [HttpPost]
-        [Route("[action]/{userId}")]
-        public async Task<Response<bool>> CreateWishlist([FromRoute] string userId)
+        [Route(nameof(CreateWishlist))]
+        public async Task<Response<bool>> CreateWishlist()
         {
             try
             {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (string.IsNullOrEmpty(userId))
+                {
+                    return Response<bool>.Error(ErrorKeys.Unauthorized);
+                }
                 var res = await wishlistService.CreateWishlistAsync(userId);
                 return Response<bool>.Ok(res);
             }
@@ -200,11 +206,16 @@ namespace BookBridge.API.Controllers
         }
 
         [HttpPost]
-        [Route("[action]/{bookId}/{userId}")]
-        public async Task<Response<WishlistItemModel>> AddItemToWishlistItem([FromRoute]long bookId,[FromRoute] string userId)
+        [Route("[action]/{bookId}")]
+        public async Task<Response<WishlistItemModel>> AddItemToWishlistItem([FromRoute]long bookId)
         {
             try
             {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (string.IsNullOrEmpty(userId))
+                {
+                    return Response<WishlistItemModel>.Error(ErrorKeys.Unauthorized);
+                }
                 var res = await wishlistService.AddItemToWishlistItemAsync(bookId, userId);
                 return res == null ? Response<WishlistItemModel>.Error(ErrorKeys.NotFound) 
                     : Response<WishlistItemModel>.Ok(res);
@@ -216,11 +227,16 @@ namespace BookBridge.API.Controllers
         }
 
         [HttpPost]
-        [Route("[action]/{bookId}/{userId}")]
-        public async Task<Response<bool>> RemoveItemFromWishlist([FromRoute]long bookId, [FromRoute]string userId)
+        [Route("[action]/{bookId}")]
+        public async Task<Response<bool>> RemoveItemFromWishlist([FromRoute]long bookId)
         {
             try
             {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (string.IsNullOrEmpty(userId))
+                {
+                    return Response<bool>.Error(ErrorKeys.Unauthorized);
+                }
                 var res = await wishlistService.RemoveItemFromWishlistAsync(bookId, userId);
                 return Response<bool>.Ok(res);
             }
@@ -231,11 +247,16 @@ namespace BookBridge.API.Controllers
         }
 
         [HttpPost]
-        [Route("[action]/{userId}")]
-        public async Task<Response<IEnumerable<WishlistItemModel>>> GetUserWishlist([FromRoute] string userId)
+        [Route(nameof(GetUserWishlist))]
+        public async Task<Response<IEnumerable<WishlistItemModel>>> GetUserWishlist()
         {
             try
             {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (string.IsNullOrEmpty(userId))
+                {
+                    return Response<IEnumerable<WishlistItemModel>>.Error(ErrorKeys.Unauthorized);
+                }
                 var res = await wishlistService.GetUserWishlistAsync(userId);
                 return !res.Any()
                     ? Response<IEnumerable<WishlistItemModel>>.Error(ErrorKeys.NotFound)

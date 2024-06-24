@@ -1,4 +1,3 @@
-using System.Reflection;
 using System.Text;
 using BookBridge.Domain.Data;
 using BookBridge.Domain.Entities;
@@ -9,9 +8,10 @@ using BookBridge.Application.Interfaces;
 using BookBridge.Domain.Interfaces;
 using BookBridge.Infrastructure.Repositories;
 using BookBridge.Application.Services;
-using BookBridge.Persistance.Reflections;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using BookBridge.Application.Interfaces.StatisticInterfaces;
+using BookBridge.Application.Services.StatisticServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,9 +33,11 @@ builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IBookCategoryService,BookCategoryService>();
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IBorrowService, BorrowService>();
+builder.Services.AddScoped<INotificationService,NotificationService>();
 builder.Services.AddScoped<IIdentityService, IdentityServices>();
 builder.Services.AddScoped<IReviewService, WishlistService>();
 builder.Services.AddScoped<IWishlistService, WishlistService>();
+builder.Services.AddScoped<IStatisticBookRelatedService,StatisticBookRelatedService>();
 
 
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);

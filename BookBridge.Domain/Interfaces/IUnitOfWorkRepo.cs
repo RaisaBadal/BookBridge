@@ -16,5 +16,7 @@
 
         IWishlistRepo WishlistRepo { get; }
 
+        Task Savechanges();
+
     }
 }

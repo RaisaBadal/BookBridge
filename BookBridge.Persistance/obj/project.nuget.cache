@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OhfJ5NWnRWmfFifPMmKCDsxBsYe63sbuTNmBe3gWFlBmvLMpudijzOFwm+5luMBGdhGSecm8zvMrRypX0e1h9g==",
+  "dgSpecHash": "GOW4hgHJgkdQzoybNZf2qnClDOQM9NiRBOEH0K9tee1PYhDhiJ7SJwwMUwwZhzY8MINNc5exzG4YiulbLPP5TQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\RAISA\\Source\\Repos\\BookBrige.APId\\BookBridge.Persistance\\BookBridge.Persistance.csproj",
+  "projectFilePath": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Persistance\\BookBridge.Persistance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\RAISA\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\RAISA\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",

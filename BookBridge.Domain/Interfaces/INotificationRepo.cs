@@ -4,9 +4,16 @@ namespace BookBridge.Domain.Interfaces
 {
     public interface INotificationRepo
     {
-        Task<Notification> CreateNotificationAsync(string userId, string message);
-        Task<Notification> MarkNotificationAsSentAsync(long notificationId);
-        Task<IEnumerable<Notification>> GetUserNotificationsAsync(string userId);
+        Task<Notification> CreateNotificationAsync(string message);
+
+        Task<Notification> GetNotificationByIdAsync(long notificationId);
+
+        Task<Notification> UpdateNotificationAsync(long id, Notification notification);
+
+        Task<IEnumerable<UserNotification>> GetAllNotificationAsync();
+
         Task DeleteNotificationAsync(long notificationId);
+
+        Task<bool> AtachNotificationToUserAsync(UserNotification userNotification);
     }
 }

@@ -5,57 +5,27 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookBridge.Infrastructure.Repositories
 {
-    public class NotificationRepo:AbstractClass<Notification>,INotificationRepo
+    public class NotificationRepo:AbstractClass<Notification>,INotificationRepo  
     {
         public NotificationRepo(BookBridgeDb context) : base(context)
         {
         }
 
-        #region CreateNotificationAsync
-        public async Task<Notification> CreateNotificationAsync(string userId, string message)
-        {
-            var user = await Context.Users.FindAsync(userId);
-            if (user is null)
-            {
-                throw new KeyNotFoundException($"User with id: {userId} is not found.");
-            }
 
-            var newMessage = new Notification()
+        #region CreateNotificationAsync
+        public async Task<Notification> CreateNotificationAsync(string message)
+        {
+            if (await DbSet.AnyAsync(i => i.Message == message))
+            {
+                throw new ArgumentException("Such message already exist in DB");
+            }
+            Notification notification = new Notification()
             {
                 CreatedDate = DateTime.Now,
                 Message = message,
-                UserId = userId
             };
-            await DbSet.AddAsync(newMessage);
+            await DbSet.AddAsync(notification);
             await Context.SaveChangesAsync();
-
-            return newMessage;
-        }
-        #endregion
-
-        #region MarkNotificationAsSentAsync
-
-        public async Task<Notification> MarkNotificationAsSentAsync(long notificationId)
-        {
-            var notification = await DbSet.FindAsync(notificationId) 
-                               ?? throw new KeyNotFoundException($"Notification not found by id: {notificationId}");
-            notification.SentDate= DateTime.Now;
-            notification.IsSent = true;
-            await Context.SaveChangesAsync();
-            return notification;
-        }
-
-
-        #endregion
-
-        #region GetUserNotificationsAsync
-
-        public async Task<IEnumerable<Notification>> GetUserNotificationsAsync(string userId)
-        {
-            var user = await Context.Users.FindAsync(userId)
-                       ?? throw new KeyNotFoundException($"User not found by id: {userId}");
-            var notification = await DbSet.Where(i=>i.UserId==userId).ToListAsync();
-            if (notification is null) throw new Exception("No Notification found");
             return notification;
         }
         #endregion
@@ -64,12 +34,59 @@ namespace BookBridge.Infrastructure.Repositories
 
         public async Task DeleteNotificationAsync(long notificationId)
         {
-            var notification = await DbSet.FindAsync(notificationId) 
-                               ?? throw new KeyNotFoundException($"No message found by id: {notificationId}");
+            var notification = await DbSet.FindAsync(notificationId)
+                ?? throw new ArgumentException($"No notification found by id: {notificationId}");
             DbSet.Remove(notification);
             await Context.SaveChangesAsync();
+        }
+        #endregion
+
+        #region GetAllNotificationAsync
+
+        public async Task<IEnumerable<UserNotification>> GetAllNotificationAsync()
+        {
+            return await Context.UserNotifications.ToListAsync();
+        }
+        #endregion
+
+        #region GetNotificationByIdAsync
+
+        public async Task<Notification> GetNotificationByIdAsync(long notificationId)
+        {
+            var notification = await DbSet.FindAsync(notificationId)
+                ?? throw new ArgumentException($"No notification find by id: {notificationId}");
+            return notification;
 
         }
+        #endregion
+
+        #region UpdateNotificationAsync
+
+        public async Task<Notification> UpdateNotificationAsync(long id,Notification notification)
+        {
+            var notif = await DbSet.FindAsync(id)
+                 ?? throw new ArgumentException($"No notification found by id: {id}");
+            notif.Message = notification.Message;
+            notif.CreatedDate = DateTime.Now;
+            await Context.SaveChangesAsync();
+            return notif;
+        }
+        #endregion
+
+        #region AtachNotificationToUserAsync
+
+        public async Task<bool> AtachNotificationToUserAsync(UserNotification userNotification)
+        {
+            var context = await Context.UserNotifications.AnyAsync(i=>i.UserId==userNotification.UserId&&i.NotificationId==userNotification.NotificationId);
+            if(!context)
+            {
+                await Context.UserNotifications.AddAsync(userNotification);
+                await Context.SaveChangesAsync();
+                return true;
+            }
+            throw new ArgumentException("Such record already exist in BookBridgeDB");
+        }
+
         #endregion
     }
 }

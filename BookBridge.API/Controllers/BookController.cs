@@ -10,7 +10,7 @@ namespace BookBridge.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles ="ADMIN")]
     public class BookController(
         IBookService _bookService,
         IBookCategoryService _bookCategoryService,
@@ -39,7 +39,7 @@ namespace BookBridge.API.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpDelete]
         [Route("[action]/{id}")]
         [AllowAnonymous]
         public async Task<Response<bool>> RemoveBook([FromRoute] long id)
@@ -239,6 +239,7 @@ namespace BookBridge.API.Controllers
 
         [HttpGet]
         [Route("[action]/{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<BookCategoryModel>> GetByIdBookCategory([FromRoute]long id)
         {
             try
@@ -357,6 +358,7 @@ namespace BookBridge.API.Controllers
 
         [HttpGet]
         [Route("[action]/{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<AuthorModel>> GetByIdAuthor([FromRoute]long id)
         {
             try

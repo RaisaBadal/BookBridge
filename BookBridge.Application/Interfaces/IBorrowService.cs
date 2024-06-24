@@ -1,4 +1,5 @@
-﻿using BookBridge.Application.Models.Request;
+﻿using BookBridge.Application.Models;
+using BookBridge.Application.Models.Request;
 
 namespace BookBridge.Application.Interfaces
 {
@@ -6,10 +7,8 @@ namespace BookBridge.Application.Interfaces
     {
         Task<BorrowRecordModel> BorrowBookAsync(long bookId, string userId);
         Task<BorrowRecordModel> ReturnBookAsync(long bookId, string userId);
-        Task<NotificationModel> CreateNotificationAsync(string userId, string message);
-        Task<NotificationModel> MarkNotificationAsSentAsync(long notificationId);
-        Task<IEnumerable<NotificationModel>> GetUserNotificationsAsync(string userId);
-        Task DeleteNotificationAsync(long notificationId);
-        Task<IEnumerable<NotificationModel>> CreateNotificationsAsync(IEnumerable<string> userIds, string message);
+        Task<IEnumerable<BorrowRecordModel>> GetUserBorrowRecordsAsync(string userId);
+        Task<bool> UpdateDueDateAsync(UpdateBorrowRecordModel updateBorrowRecordModel);
+        Task SendRemindersAsync();
     }
 }

@@ -9,7 +9,5 @@ namespace BookBridge.Application.Models.Request
 
         public DateTime CreatedDate { get; set; }
 
-        public DateTime? SentDate { get; set; }
-
     }
 }

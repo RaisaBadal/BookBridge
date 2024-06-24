@@ -1,5 +1,7 @@
-﻿using System.Security.Claims;
+﻿using System.Collections.Generic;
+using System.Security.Claims;
 using BookBridge.Application.Interfaces;
+using BookBridge.Application.Models;
 using BookBridge.Application.Models.Request;
 using BookBridge.Application.response;
 using BookBridge.Application.StaticFiles;
@@ -27,6 +29,11 @@ namespace BookBridge.API.Controllers
             this.userManager = userManager;
         }
 
+
+        /// <summary>
+        /// Get borrowed book detail by ID
+        /// </summary>
+        /// <returns>Returns  a   borrow record.</returns>
         [HttpPost]
         [Route("Book: {bookId}/[action]")]
         public async Task<Response<BorrowRecordModel>> BorrowBook([FromRoute] long bookId)
@@ -71,93 +78,52 @@ namespace BookBridge.API.Controllers
         }
 
         [HttpPost]
-        [Route("User: {userId}/[action]")]
-        public async Task<Response<NotificationModel>> CreateNotification([FromRoute] string userId, [FromHeader] string message)
+        [Route("[action]")]
+        public async Task<Response<IEnumerable<BorrowRecordModel>>> GetUserBorrowRecords()
         {
             try
             {
-                var res = await borrowService.CreateNotificationAsync(userId, message);
-                return res == null ? Response<NotificationModel>.Error(ErrorKeys.BadRequest)
-                    : Response<NotificationModel>.Ok(res);
-            }
-            catch (Exception e)
-            {
-                return Response<NotificationModel>.Error(e.Message, e.StackTrace, ErrorKeys.InternalServerError);
-            }
-        }
-
-        [HttpPost]
-        [Route("Users/[action]")]
-        public async Task<Response<IEnumerable<NotificationModel>>> CreateNotifications([FromBody] List<string> userIds, [FromHeader] string message)
-        {
-            try
-            {
-                var res = await borrowService.CreateNotificationsAsync(userIds, message);
-                return res == null ? Response<IEnumerable<NotificationModel>>.Error(ErrorKeys.BadRequest)
-                    : Response<IEnumerable<NotificationModel>>.Ok(res);
-            }
-            catch (Exception e)
-            {
-                return Response<IEnumerable<NotificationModel>>.Error(e.Message, e.StackTrace, ErrorKeys.InternalServerError);
-            }
-        }
-
-        [HttpPatch]
-        [Route("{notificationId}/[action]")]
-        public async Task<Response<NotificationModel>> MarkNotificationAsSentAsync([FromRoute] long notificationId)
-        {
-            try
-            {
-                var res = await borrowService.MarkNotificationAsSentAsync(notificationId);
-                return res == null ? Response<NotificationModel>.Error(ErrorKeys.BadRequest)
-                    : Response<NotificationModel>.Ok(res);
-            }
-            catch (Exception e)
-            {
-                return Response<NotificationModel>.Error(e.Message, e.StackTrace, ErrorKeys.InternalServerError);
-            }
-        }
-
-        [HttpPost]
-        [Route("{userId}/[action]")]
-        public async Task<Response<IEnumerable<NotificationModel>>> UserNotifications([FromRoute] string userId)
-        {
-            try
-            {
-                var cacheKey = $"{userId}UserNotification";
-                if (memoryCache.TryGetValue(cacheKey, out IEnumerable<NotificationModel?> model))
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (string.IsNullOrEmpty(userId))
                 {
-                    if (model is not null) return Response<IEnumerable<NotificationModel>>.Ok(model);
+                    return Response<IEnumerable<BorrowRecordModel>>.Error(ErrorKeys.Unauthorized);
                 }
-
-                var res = await borrowService.GetUserNotificationsAsync(userId);
-                if (res == null)
-                {
-                    return Response<IEnumerable<NotificationModel>>.Error(ErrorKeys.NotFound);
-                }
-
-                memoryCache.Set(cacheKey, res, TimeSpan.FromMinutes(15));
-                return Response<IEnumerable<NotificationModel>>.Ok(res);
+                var res = await borrowService.GetUserBorrowRecordsAsync(userId);
+                if (!res.Any()) return Response<IEnumerable<BorrowRecordModel>>.Error(ErrorKeys.NotFound);
+                return Response<IEnumerable<BorrowRecordModel>>.Ok(res);
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                return Response<IEnumerable<NotificationModel>>.Error(e.Message, e.StackTrace, ErrorKeys.InternalServerError);
+                return Response<IEnumerable<BorrowRecordModel>>.Error(ErrorKeys.InternalServerError);
             }
         }
 
-        [HttpDelete]
-        [Route("{notificationId}/[action]")]
-        public async Task<Response<bool>> DeleteNotification([FromRoute] long notificationId)
+        [Authorize(Roles = "ADMIN")]
+        [HttpPost]
+        [Route(nameof(UpdateBorrowRecordsDueDate))]
+        public async Task<Response<bool>> UpdateBorrowRecordsDueDate([FromBody]UpdateBorrowRecordModel updateBorrowRecordModel)
         {
             try
             {
-                await borrowService.DeleteNotificationAsync(notificationId);
-                return Response<bool>.Ok(true);
+                ArgumentNullException.ThrowIfNull(updateBorrowRecordModel, nameof(updateBorrowRecordModel));
+                var res=await borrowService.UpdateDueDateAsync(updateBorrowRecordModel);
+                return res ? Response<bool>.Ok(res)
+                    : Response<bool>.Error(ErrorKeys.BadRequest);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                return Response<bool>.Error(e.Message, e.StackTrace, ErrorKeys.InternalServerError);
+                return Response<bool>.Error(ex.Message,ex.StackTrace,ErrorKeys.InternalServerError);
+               
             }
         }
+
+        [Authorize(Roles ="ADMIN")]
+        [HttpGet]
+        [Route(nameof(SendReminders))]
+        public async Task SendReminders()
+        {
+            await borrowService.SendRemindersAsync();
+        }
+
     }
 }

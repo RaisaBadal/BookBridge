@@ -89,5 +89,19 @@ namespace BookBridge.Infrastructure.Repositories
 
         }
         #endregion
+
+        #region ReturnAllActiveBorrowRecordAsync
+        public async Task<IEnumerable<BorrowRecord>> ReturnAllActiveBorrowRecordAsync()
+        {
+            return await DbSet.Where(i=> !i.IsReturned).ToListAsync();
+        }
+        #endregion
+
+        #region MyRegion
+        public async Task<IEnumerable<BorrowRecord>> ReturnAllBorrowRecordAsync()
+        {
+            return await DbSet.Include(io=>io.Books).ToListAsync();
+        }
+        #endregion
     }
 }

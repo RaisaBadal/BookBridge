@@ -14,5 +14,6 @@ namespace BookBridge.Domain.Data
         public virtual DbSet<Wishlist>Wishlists { get; set; }
         public virtual DbSet<WishlistItem> WishlistItems { get; set; }
         public virtual DbSet<Notification>Notifications { get; set; }
+        public virtual DbSet<UserNotification> UserNotifications { get; set; }
     }
 }

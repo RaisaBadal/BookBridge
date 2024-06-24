@@ -1,7 +1,36 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\RAISA\\source\\repos\\BookBrige.APId\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|c:\\users\\raisa\\source\\repos\\bookbrige.api\\bookbridge.infrastructure\\repositories\\wishlistrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|solutionrelative:bookbridge.infrastructure\\repositories\\wishlistrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|c:\\users\\raisa\\source\\repos\\bookbrige.api\\bookbridge.infrastructure\\repositories\\notificationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|solutionrelative:bookbridge.infrastructure\\repositories\\notificationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF94BDAA-E0BE-4987-9352-186B57A2253C}|BookBridge.Application\\BookBridge.Application.csproj|c:\\users\\raisa\\source\\repos\\bookbrige.api\\bookbridge.application\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF94BDAA-E0BE-4987-9352-186B57A2253C}|BookBridge.Application\\BookBridge.Application.csproj|solutionrelative:bookbridge.application\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|c:\\users\\raisa\\source\\repos\\bookbrige.api\\bookbridge.infrastructure\\repositories\\bookrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|solutionrelative:bookbridge.infrastructure\\repositories\\bookrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|c:\\users\\raisa\\source\\repos\\bookbrige.api\\bookbridge.infrastructure\\repositories\\bookcategoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|solutionrelative:bookbridge.infrastructure\\repositories\\bookcategoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF94BDAA-E0BE-4987-9352-186B57A2253C}|BookBridge.Application\\BookBridge.Application.csproj|c:\\users\\raisa\\source\\repos\\bookbrige.api\\bookbridge.application\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF94BDAA-E0BE-4987-9352-186B57A2253C}|BookBridge.Application\\BookBridge.Application.csproj|solutionrelative:bookbridge.application\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF94BDAA-E0BE-4987-9352-186B57A2253C}|BookBridge.Application\\BookBridge.Application.csproj|c:\\users\\raisa\\source\\repos\\bookbrige.api\\bookbridge.application\\mapper\\automapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF94BDAA-E0BE-4987-9352-186B57A2253C}|BookBridge.Application\\BookBridge.Application.csproj|solutionrelative:bookbridge.application\\mapper\\automapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +47,96 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WishlistRepo.cs",
+              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\WishlistRepo.cs",
+              "RelativeDocumentMoniker": "BookBridge.Infrastructure\\Repositories\\WishlistRepo.cs",
+              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\WishlistRepo.cs",
+              "RelativeToolTip": "BookBridge.Infrastructure\\Repositories\\WishlistRepo.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAuwC0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T11:35:06.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Application\\Services\\BookService.cs",
+              "RelativeDocumentMoniker": "BookBridge.Application\\Services\\BookService.cs",
+              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Application\\Services\\BookService.cs",
+              "RelativeToolTip": "BookBridge.Application\\Services\\BookService.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAUwA4AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T09:15:53.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookRepo.cs",
+              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\BookRepo.cs",
+              "RelativeDocumentMoniker": "BookBridge.Infrastructure\\Repositories\\BookRepo.cs",
+              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\BookRepo.cs",
+              "RelativeToolTip": "BookBridge.Infrastructure\\Repositories\\BookRepo.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T09:15:31.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BookCategoryRepo.cs",
+              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\BookCategoryRepo.cs",
+              "RelativeDocumentMoniker": "BookBridge.Infrastructure\\Repositories\\BookCategoryRepo.cs",
+              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\BookCategoryRepo.cs",
+              "RelativeToolTip": "BookBridge.Infrastructure\\Repositories\\BookCategoryRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T09:15:29.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AutoMapper.cs",
+              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Application\\Mapper\\AutoMapper.cs",
+              "RelativeDocumentMoniker": "BookBridge.Application\\Mapper\\AutoMapper.cs",
+              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Application\\Mapper\\AutoMapper.cs",
+              "RelativeToolTip": "BookBridge.Application\\Mapper\\AutoMapper.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T17:27:21.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Application\\Services\\NotificationService.cs",
+              "RelativeDocumentMoniker": "BookBridge.Application\\Services\\NotificationService.cs",
+              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Application\\Services\\NotificationService.cs",
+              "RelativeToolTip": "BookBridge.Application\\Services\\NotificationService.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAADwv54AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T17:20:35.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NotificationRepo.cs",
+              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\NotificationRepo.cs",
+              "RelativeDocumentMoniker": "BookBridge.Infrastructure\\Repositories\\NotificationRepo.cs",
+              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\NotificationRepo.cs",
+              "RelativeToolTip": "BookBridge.Infrastructure\\Repositories\\NotificationRepo.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAEkAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T17:19:45.462Z",
+              "EditorCaption": ""
             }
           ]
         },

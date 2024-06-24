@@ -17,5 +17,10 @@ namespace BookBridge.Infrastructure.Repositories
         {
             bookBridgeDb.Dispose();
         }
+
+        public async Task Savechanges()
+        {
+           await  bookBridgeDb.SaveChangesAsync();
+        }
     }
 }

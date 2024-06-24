@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookBridge.Domain.Migrations
 {
     [DbContext(typeof(BookBridgeDb))]
-    [Migration("20240608195223_asjhaj")]
-    partial class asjhaj
+    [Migration("20240613071526_firstMigration")]
+    partial class firstMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -223,26 +223,14 @@ namespace BookBridge.Domain.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsSent")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Message")
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<DateTime?>("SentDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CreatedDate");
-
-                    b.HasIndex("SentDate");
 
                     b.ToTable("Notifications");
                 });
@@ -379,6 +367,36 @@ namespace BookBridge.Domain.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("BookBridge.Domain.Entities.UserNotification", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<bool>("IsSent")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("NotificationId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("SentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NotificationId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserNotifications");
                 });
 
             modelBuilder.Entity("BookBridge.Domain.Entities.Wishlist", b =>
@@ -560,21 +578,6 @@ namespace BookBridge.Domain.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("NotificationUser", b =>
-                {
-                    b.Property<long>("NotificationsId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("UsersId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("NotificationsId", "UsersId");
-
-                    b.HasIndex("UsersId");
-
-                    b.ToTable("NotificationUser");
-                });
-
             modelBuilder.Entity("AuthorBook", b =>
                 {
                     b.HasOne("BookBridge.Domain.Entities.Author", null)
@@ -646,6 +649,25 @@ namespace BookBridge.Domain.Migrations
                         .IsRequired();
 
                     b.Navigation("Book");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("BookBridge.Domain.Entities.UserNotification", b =>
+                {
+                    b.HasOne("BookBridge.Domain.Entities.Notification", "Notification")
+                        .WithMany("UserNotifications")
+                        .HasForeignKey("NotificationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BookBridge.Domain.Entities.User", "User")
+                        .WithMany("UserNotifications")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Notification");
 
                     b.Navigation("User");
                 });
@@ -731,21 +753,6 @@ namespace BookBridge.Domain.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("NotificationUser", b =>
-                {
-                    b.HasOne("BookBridge.Domain.Entities.Notification", null)
-                        .WithMany()
-                        .HasForeignKey("NotificationsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BookBridge.Domain.Entities.User", null)
-                        .WithMany()
-                        .HasForeignKey("UsersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("BookBridge.Domain.Entities.Book", b =>
                 {
                     b.Navigation("Reviews");
@@ -753,11 +760,18 @@ namespace BookBridge.Domain.Migrations
                     b.Navigation("WishlistItems");
                 });
 
+            modelBuilder.Entity("BookBridge.Domain.Entities.Notification", b =>
+                {
+                    b.Navigation("UserNotifications");
+                });
+
             modelBuilder.Entity("BookBridge.Domain.Entities.User", b =>
                 {
                     b.Navigation("BorrowRecords");
 
                     b.Navigation("Reviews");
+
+                    b.Navigation("UserNotifications");
 
                     b.Navigation("Wishlist")
                         .IsRequired();

@@ -17,6 +17,7 @@ namespace BookBridge.Application.Mapper
             CreateMap<WishlistItem, WishlistItemModel>().ReverseMap();
             CreateMap<Wishlist, WishlistModel>().ReverseMap();
             CreateMap<User,UserModel>().ReverseMap();
+            CreateMap<UserNotification, UserNotificationModel>().ReverseMap();
         }
     }
 }

@@ -37,6 +37,8 @@ namespace BookBridge.Infrastructure.Repositories
                 BookId = bookId,
                 WishlistId = await DbSet.Where(i=>i.UserId==userId).Select(i=>i.Id).FirstOrDefaultAsync()
             };
+            await Context.WishlistItems.AddAsync(wishlistItem);
+            Context.SaveChanges();
             return wishlistItem;
         }
         #endregion
@@ -45,7 +47,7 @@ namespace BookBridge.Infrastructure.Repositories
 
         public async Task<bool> RemoveItemFromWishlistAsync(long bookId, string userId)
         {
-            var wishlist = await DbSet.FindAsync(userId)
+            var wishlist = await DbSet.FirstOrDefaultAsync(i => i.UserId == userId)
                            ?? throw new KeyNotFoundException($"No user found by id: {userId}");
             var wishlistItem =
                 await Context.WishlistItems.Where(i => i.WishlistId == wishlist.Id && i.BookId==bookId).FirstOrDefaultAsync();
@@ -60,7 +62,7 @@ namespace BookBridge.Infrastructure.Repositories
 
         public async Task<IEnumerable<WishlistItem>> GetUserWishlistAsync(string userId)
         {
-            var wishlist = await DbSet.FindAsync(userId)
+            var wishlist = await DbSet.FirstOrDefaultAsync(i => i.UserId == userId)
                            ?? throw new KeyNotFoundException($"No user found by id: {userId}");
             var wishlistItem = await Context.WishlistItems.Where(i => i.WishlistId == wishlist.Id).ToListAsync();
             return wishlistItem;

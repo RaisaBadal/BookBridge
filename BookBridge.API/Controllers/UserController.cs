@@ -18,6 +18,7 @@ namespace BookBridge.API.Controllers
 
         [HttpPost]
         [Route("User/[action]")]
+        [AllowAnonymous]
         public async Task<Response<IdentityResult>> Registration(UserModel userModel)
         {
             try
@@ -34,6 +35,7 @@ namespace BookBridge.API.Controllers
 
         [HttpPost]
         [Route("User/[action]")]
+        [AllowAnonymous]
         public async Task<Response<SignInResult>> SignIn(SignInModel signInModel)
         {
             try
