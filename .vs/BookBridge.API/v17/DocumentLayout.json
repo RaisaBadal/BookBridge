@@ -3,36 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.API\\Controllers\\NotificationController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BookBridge.API\\Controllers\\NotificationController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|c:\\users\\raisa\\source\\repos\\bookbrige.api\\bookbridge.infrastructure\\repositories\\wishlistrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|solutionrelative:bookbridge.infrastructure\\repositories\\wishlistrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|c:\\users\\raisa\\source\\repos\\bookbrige.api\\bookbridge.infrastructure\\repositories\\notificationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|solutionrelative:bookbridge.infrastructure\\repositories\\notificationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF94BDAA-E0BE-4987-9352-186B57A2253C}|BookBridge.Application\\BookBridge.Application.csproj|c:\\users\\raisa\\source\\repos\\bookbrige.api\\bookbridge.application\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF94BDAA-E0BE-4987-9352-186B57A2253C}|BookBridge.Application\\BookBridge.Application.csproj|solutionrelative:bookbridge.application\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|c:\\users\\raisa\\source\\repos\\bookbrige.api\\bookbridge.infrastructure\\repositories\\bookrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|solutionrelative:bookbridge.infrastructure\\repositories\\bookrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|c:\\users\\raisa\\source\\repos\\bookbrige.api\\bookbridge.infrastructure\\repositories\\bookcategoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEF57146-0773-45F6-9215-A7614BABD62F}|BookBridge.Infrastructure\\BookBridge.Infrastructure.csproj|solutionrelative:bookbridge.infrastructure\\repositories\\bookcategoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF94BDAA-E0BE-4987-9352-186B57A2253C}|BookBridge.Application\\BookBridge.Application.csproj|c:\\users\\raisa\\source\\repos\\bookbrige.api\\bookbridge.application\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF94BDAA-E0BE-4987-9352-186B57A2253C}|BookBridge.Application\\BookBridge.Application.csproj|solutionrelative:bookbridge.application\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF94BDAA-E0BE-4987-9352-186B57A2253C}|BookBridge.Application\\BookBridge.Application.csproj|c:\\users\\raisa\\source\\repos\\bookbrige.api\\bookbridge.application\\mapper\\automapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF94BDAA-E0BE-4987-9352-186B57A2253C}|BookBridge.Application\\BookBridge.Application.csproj|solutionrelative:bookbridge.application\\mapper\\automapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B46D49A4-3418-478E-9A91-38DF8361D156}|BookBridge.API\\BookBridge.API.csproj|c:\\users\\raisa\\source\\repos\\bookbrige.api\\bookbridge.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B46D49A4-3418-478E-9A91-38DF8361D156}|BookBridge.API\\BookBridge.API.csproj|solutionrelative:bookbridge.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,100 +27,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "NotificationController.cs",
-              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.API\\Controllers\\NotificationController.cs",
-              "RelativeDocumentMoniker": "BookBridge.API\\Controllers\\NotificationController.cs",
-              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.API\\Controllers\\NotificationController.cs",
-              "RelativeToolTip": "BookBridge.API\\Controllers\\NotificationController.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAAAH8AAAAAAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.API\\Program.cs",
+              "RelativeDocumentMoniker": "BookBridge.API\\Program.cs",
+              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.API\\Program.cs",
+              "RelativeToolTip": "BookBridge.API\\Program.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAQAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T21:14:30.436Z",
+              "WhenOpened": "2024-07-02T19:57:03.306Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WishlistRepo.cs",
-              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\WishlistRepo.cs",
-              "RelativeDocumentMoniker": "BookBridge.Infrastructure\\Repositories\\WishlistRepo.cs",
-              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\WishlistRepo.cs",
-              "RelativeToolTip": "BookBridge.Infrastructure\\Repositories\\WishlistRepo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T11:35:06.72Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BookService.cs",
-              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Application\\Services\\BookService.cs",
-              "RelativeDocumentMoniker": "BookBridge.Application\\Services\\BookService.cs",
-              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Application\\Services\\BookService.cs",
-              "RelativeToolTip": "BookBridge.Application\\Services\\BookService.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAUwA4AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T09:15:53.011Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BookRepo.cs",
-              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\BookRepo.cs",
-              "RelativeDocumentMoniker": "BookBridge.Infrastructure\\Repositories\\BookRepo.cs",
-              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\BookRepo.cs",
-              "RelativeToolTip": "BookBridge.Infrastructure\\Repositories\\BookRepo.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAYwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T09:15:31.506Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BookCategoryRepo.cs",
-              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\BookCategoryRepo.cs",
-              "RelativeDocumentMoniker": "BookBridge.Infrastructure\\Repositories\\BookCategoryRepo.cs",
-              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\BookCategoryRepo.cs",
-              "RelativeToolTip": "BookBridge.Infrastructure\\Repositories\\BookCategoryRepo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T09:15:29.228Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AutoMapper.cs",
-              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Application\\Mapper\\AutoMapper.cs",
-              "RelativeDocumentMoniker": "BookBridge.Application\\Mapper\\AutoMapper.cs",
-              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Application\\Mapper\\AutoMapper.cs",
-              "RelativeToolTip": "BookBridge.Application\\Mapper\\AutoMapper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T17:27:21.467Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "NotificationService.cs",
-              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Application\\Services\\NotificationService.cs",
-              "RelativeDocumentMoniker": "BookBridge.Application\\Services\\NotificationService.cs",
-              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Application\\Services\\NotificationService.cs",
-              "RelativeToolTip": "BookBridge.Application\\Services\\NotificationService.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAADwv54AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T17:20:35.452Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NotificationRepo.cs",
-              "DocumentMoniker": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\NotificationRepo.cs",
-              "RelativeDocumentMoniker": "BookBridge.Infrastructure\\Repositories\\NotificationRepo.cs",
-              "ToolTip": "C:\\Users\\RAISA\\source\\repos\\BookBrige.API\\BookBridge.Infrastructure\\Repositories\\NotificationRepo.cs",
-              "RelativeToolTip": "BookBridge.Infrastructure\\Repositories\\NotificationRepo.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAEkAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T17:19:45.462Z"
             }
           ]
         },

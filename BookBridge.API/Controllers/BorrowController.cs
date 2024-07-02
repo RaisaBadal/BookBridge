@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using BookBridge.Application.Interfaces;
 using BookBridge.Application.Models;
 using BookBridge.Application.Models.Request;
@@ -35,7 +34,7 @@ namespace BookBridge.API.Controllers
         /// </summary>
         /// <returns>Returns  a   borrow record.</returns>
         [HttpPost]
-        [Route("Book: {bookId}/[action]")]
+        [Route("[action]/{bookId}")]
         public async Task<Response<BorrowRecordModel>> BorrowBook([FromRoute] long bookId)
         {
             try
@@ -57,7 +56,7 @@ namespace BookBridge.API.Controllers
         }
 
         [HttpPatch]
-        [Route("Book: {bookId}/[action]")]
+        [Route("[action]/{bookId}")]
         public async Task<Response<BorrowRecordModel>> ReturnBook([FromRoute] long bookId)
         {
             try
