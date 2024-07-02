@@ -4,14 +4,14 @@ using BookBridge.Domain.Entities;
 using BookBridge.Persistance.SMTPService;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using BookBridge.Application.Interfaces;
 using BookBridge.Domain.Interfaces;
 using BookBridge.Infrastructure.Repositories;
-using BookBridge.Application.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using BookBridge.Application.Interfaces.StatisticInterfaces;
-using BookBridge.Application.Services.StatisticServices;
+using System.Reflection;
+using BookBridge.Persistance.Reflections;
+using BookBridge.API.CustomMiddlwares;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,7 +29,7 @@ builder.Services.AddScoped<IBookRepo, BookRepo>();
 builder.Services.AddScoped<INotificationRepo, NotificationRepo>();
 builder.Services.AddScoped<IReviewRepo, ReviewRepo>();
 builder.Services.AddScoped<IWishlistRepo, WishlistRepo>();
-builder.Services.AddScoped<IAuthorService, AuthorService>();
+/*builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IBookCategoryService,BookCategoryService>();
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IBorrowService, BorrowService>();
@@ -37,10 +37,15 @@ builder.Services.AddScoped<INotificationService,NotificationService>();
 builder.Services.AddScoped<IIdentityService, IdentityServices>();
 builder.Services.AddScoped<IReviewService, WishlistService>();
 builder.Services.AddScoped<IWishlistService, WishlistService>();
-builder.Services.AddScoped<IStatisticBookRelatedService,StatisticBookRelatedService>();
+builder.Services.AddScoped<IStatisticBookRelatedService,StatisticBookRelatedService>();*/
+var domainAssemblyServices = Assembly.Load("BookBridge.Application");
+builder.Services.AddInjectServices(domainAssemblyServices);
+
+builder.Services.AddLogging(opt => opt.AddConsole());
 
 
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+
 builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<BookBridgeDb>().AddDefaultTokenProviders();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -59,25 +64,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 
-#region MyRegion
-
-//var domainAssembly = Assembly.Load("BookBridge.Domain");
-//var infrastructureAssembly = Assembly.Load("BookBridge.Infrastructure");
-//builder.Services.AddInjectRepositories(infrastructureAssembly);
-
-//builder.Services.AddInjectServices(domainAssembly);
-
-//var apLoad = Assembly.Load("BookBridge.Application");
-//builder.Services.AddInjectRepositories(apLoad);
-
-
-#endregion
 
 builder.Services.AddMemoryCache();
 builder.Services.AddAutoMapper(typeof(BookBridge.Application.Mapper.AutoMapper));
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -89,18 +80,6 @@ builder.Services.AddDbContext<BookBridgeDb>(
         str.UseSqlServer(builder.Configuration.GetConnectionString("BookDb"));
     }
 );
-
-builder.Services.AddCors(io =>
-{
-    io.AddPolicy("PipelinePolicy",
-        builder =>
-        {
-            if (builder == null) throw new ArgumentNullException(nameof(builder));
-            builder.WithOrigins("https://localhost:7075")
-                .AllowAnyHeader()
-                .AllowAnyMethod();
-        });
-});
 
 var app = builder.Build();
 
@@ -115,7 +94,8 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseCors("PipelinePolicy");
 app.MapControllers();
-
+app.UseMiddleware<ExceptionMiddleware>();
+app.UseMiddleware<LoggingMiddleware>();
+app.UseMiddleware<RateLimitingMiddleware>();
 app.Run();

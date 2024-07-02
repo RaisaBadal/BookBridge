@@ -37,83 +37,63 @@ namespace BookBridge.API.Controllers
         [Route("[action]/{bookId}")]
         public async Task<Response<BorrowRecordModel>> BorrowBook([FromRoute] long bookId)
         {
-            try
-            {
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                if (string.IsNullOrEmpty(userId))
-                {
-                    return Response<BorrowRecordModel>.Error(ErrorKeys.Unauthorized);
-                }
 
-                var res = await borrowService.BorrowBookAsync(bookId, userId);
-                return res == null ? Response<BorrowRecordModel>.Error(ErrorKeys.NotFound)
-                    : Response<BorrowRecordModel>.Ok(res);
-            }
-            catch (Exception e)
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
             {
-                return Response<BorrowRecordModel>.Error(e.Message, e.StackTrace, ErrorKeys.InternalServerError);
+                return Response<BorrowRecordModel>.Error(ErrorKeys.Unauthorized);
             }
+
+            var res = await borrowService.BorrowBookAsync(bookId, userId);
+            return res == null ? Response<BorrowRecordModel>.Error(ErrorKeys.NotFound)
+                : Response<BorrowRecordModel>.Ok(res);
+
         }
 
         [HttpPatch]
         [Route("[action]/{bookId}")]
         public async Task<Response<BorrowRecordModel>> ReturnBook([FromRoute] long bookId)
         {
-            try
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
             {
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                if (string.IsNullOrEmpty(userId))
-                {
-                    return Response<BorrowRecordModel>.Error(ErrorKeys.Unauthorized);
-                }
-                var res = await borrowService.ReturnBookAsync(bookId, userId);
-                return res == null ? Response<BorrowRecordModel>.Error(ErrorKeys.NotFound)
-                    : Response<BorrowRecordModel>.Ok(res);
+                return Response<BorrowRecordModel>.Error(ErrorKeys.Unauthorized);
             }
-            catch (Exception e)
-            {
-                return Response<BorrowRecordModel>.Error(e.Message, e.StackTrace, ErrorKeys.InternalServerError);
-            }
+            var res = await borrowService.ReturnBookAsync(bookId, userId);
+            return res == null ? Response<BorrowRecordModel>.Error(ErrorKeys.NotFound)
+                : Response<BorrowRecordModel>.Ok(res);
+
         }
 
         [HttpPost]
         [Route("[action]")]
         public async Task<Response<IEnumerable<BorrowRecordModel>>> GetUserBorrowRecords()
         {
-            try
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
             {
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                if (string.IsNullOrEmpty(userId))
-                {
-                    return Response<IEnumerable<BorrowRecordModel>>.Error(ErrorKeys.Unauthorized);
-                }
-                var res = await borrowService.GetUserBorrowRecordsAsync(userId);
-                if (!res.Any()) return Response<IEnumerable<BorrowRecordModel>>.Error(ErrorKeys.NotFound);
-                return Response<IEnumerable<BorrowRecordModel>>.Ok(res);
+                return Response<IEnumerable<BorrowRecordModel>>.Error(ErrorKeys.Unauthorized);
             }
-            catch (Exception)
-            {
-                return Response<IEnumerable<BorrowRecordModel>>.Error(ErrorKeys.InternalServerError);
-            }
+            var res = await borrowService.GetUserBorrowRecordsAsync(userId);
+            if (!res.Any()) return Response<IEnumerable<BorrowRecordModel>>.Error(ErrorKeys.NotFound);
+            return Response<IEnumerable<BorrowRecordModel>>.Ok(res);
+
         }
 
         [Authorize(Roles = "ADMIN")]
         [HttpPost]
         [Route(nameof(UpdateBorrowRecordsDueDate))]
-        public async Task<Response<bool>> UpdateBorrowRecordsDueDate([FromBody]UpdateBorrowRecordModel updateBorrowRecordModel)
+        public async Task<Response<bool>> UpdateBorrowRecordsDueDate([FromBody] UpdateBorrowRecordModel updateBorrowRecordModel)
         {
-            try
-            {
-                ArgumentNullException.ThrowIfNull(updateBorrowRecordModel, nameof(updateBorrowRecordModel));
-                var res=await borrowService.UpdateDueDateAsync(updateBorrowRecordModel);
-                return res ? Response<bool>.Ok(res)
-                    : Response<bool>.Error(ErrorKeys.BadRequest);
-            }
-            catch (Exception ex)
-            {
-                return Response<bool>.Error(ex.Message,ex.StackTrace,ErrorKeys.InternalServerError);
-               
-            }
+
+            ArgumentNullException.ThrowIfNull(updateBorrowRecordModel, nameof(updateBorrowRecordModel));
+            var res = await borrowService.UpdateDueDateAsync(updateBorrowRecordModel);
+            return res ? Response<bool>.Ok(res)
+                : Response<bool>.Error(ErrorKeys.BadRequest);
+
+
         }
 
         [Authorize(Roles ="ADMIN")]
