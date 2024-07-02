@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookBridge.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4dfab1bcfb07200323bf19bffb5cf8fa6e416e9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0bb5af20032538b13192fa792f58e125a97f01d6")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookBridge.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookBridge.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
