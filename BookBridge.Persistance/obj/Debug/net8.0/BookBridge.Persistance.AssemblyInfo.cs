@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookBridge.Persistance")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e036985229a8323f685f39074551fa5502061ce")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4dfab1bcfb07200323bf19bffb5cf8fa6e416e9")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookBridge.Persistance")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookBridge.Persistance")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
